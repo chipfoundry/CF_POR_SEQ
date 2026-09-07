@@ -1,0 +1,21 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 0
+<< metal1 >>
+rect 8522 17928 8578 17964
+rect 8633 17929 8688 17965
+rect 6267 17834 6750 17965
+rect 9090 17350 9592 17462
+<< labels >>
+rlabel metal1 s 8522 17928 8578 17964 4 en_l
+port 1 nsew
+rlabel metal1 s 8633 17929 8688 17965 4 por_l
+port 2 nsew
+rlabel metal1 s 6267 17834 6750 17965 4 vgnd
+port 3 nsew
+rlabel metal1 s 9090 17350 9592 17462 4 vpwr
+port 4 nsew
+<< properties >>
+string FIXED_BBOX 0 0 28390 17967
+<< end >>

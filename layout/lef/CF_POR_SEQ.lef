@@ -1,0 +1,85 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO CF_POR_SEQ
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  FOREIGN CF_POR_SEQ 0 0 ;
+  SIZE 171.95 BY 119.835 ;
+  PIN en_l
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 57.61 104.64 57.89 119.835 ;
+    END
+  END en_l
+  PIN por_l
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 58.165 104.645 58.44 119.835 ;
+    END
+  END por_l
+  PIN vgnd
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met1 ;
+        RECT 46.335 104.17 48.75 104.825 ;
+      LAYER met2 ;
+        RECT 47.305 104.17 47.785 108.435 ;
+      LAYER met3 ;
+        RECT 1.23 105.335 170.72 108.435 ;
+      LAYER met4 ;
+        RECT 20 0 23.1 119.835 ;
+        RECT 50 0 53.1 119.835 ;
+        RECT 80 0 83.1 119.835 ;
+        RECT 110 0 113.1 119.835 ;
+        RECT 140 0 143.1 119.835 ;
+    END
+  END vgnd
+  PIN vpwr
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met1 ;
+        RECT 60.45 101.75 62.96 102.31 ;
+      LAYER met2 ;
+        RECT 61.465 101.75 61.945 113.235 ;
+      LAYER met3 ;
+        RECT 1.23 110.135 170.72 113.235 ;
+      LAYER met4 ;
+        RECT 5 0 8.1 119.835 ;
+        RECT 35 0 38.1 119.835 ;
+        RECT 65 0 68.1 119.835 ;
+        RECT 95 0 98.1 119.835 ;
+        RECT 125 0 128.1 119.835 ;
+        RECT 155 0 158.1 119.835 ;
+    END
+  END vpwr
+  OBS
+    LAYER li1 ;
+      RECT 0 0 171.95 119.835 ;
+    LAYER met1 ;
+      RECT 0 0 15 119.835 ;
+      RECT 156.95 0 171.95 119.835 ;
+      RECT 15 0 156.95 15 ;
+      RECT 15 104.835 57.61 119.835 ;
+      RECT 57.89 104.835 58.165 119.835 ;
+      RECT 58.44 104.835 156.95 119.835 ;
+    LAYER met2 ;
+      RECT 0 0 15 119.835 ;
+      RECT 156.95 0 171.95 119.835 ;
+      RECT 15 0 156.95 15 ;
+      RECT 15 104.835 47.305 119.835 ;
+      RECT 47.305 108.435 47.785 119.835 ;
+      RECT 47.785 104.835 61.465 119.835 ;
+      RECT 61.465 113.235 61.945 119.835 ;
+      RECT 61.945 104.835 156.95 119.835 ;
+  END
+END CF_POR_SEQ
+
+END LIBRARY
