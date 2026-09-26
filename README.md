@@ -2,7 +2,7 @@
 
 > Power-on-reset generator and initialization sequencer
 
-Draft for designer review. The public GDS is an abstract; ChipFoundry
+The public GDS is an abstract; ChipFoundry
 substitutes protected full geometry at tapeout.
 
 This package ships an SRAM-style PG wrap `CF_POR_SEQ` around analog leaf
@@ -25,27 +25,25 @@ Macro size is 171.95 × 119.835 µm (15 µm halo around analog leaf
 
 ```bash
 pip install cf-ipm
-ipm install CF_POR_SEQ --version 0.2.0 --include-drafts
-```
-
-Until the marketplace listing is published, install from a local catalog
-override the same way `cf-por-seq-test-project` does:
-
-```bash
-ipm install CF_POR_SEQ --version 0.2.0 --include-drafts --local-file ip/catalog.json
+ipm install CF_POR_SEQ --version 0.2.1
 ```
 
 Use `hdl/gl/CF_POR_SEQ.v` as the customer blackbox, `layout/lef/CF_POR_SEQ.lef`
 for P&R, and `layout/gds/CF_POR_SEQ.gds` / `layout/mag/CF_POR_SEQ.mag` for the
 public wrap. `CF_POR_SEQ_core` is the analog leaf (empty Verilog, pin-only
 abstract). ChipFoundry substitutes vault GDS into `CF_POR_SEQ_core` at tapeout.
-P&R uses the wrap LEF (`vpwr` / `vgnd` only).
+P&R uses the wrap LEF (`vpwr` / `vgnd` only). `timing/lib/` is the
+characterized view. Functional sim compiles `verify/beh_model/CF_POR_SEQ_core.v`
+**instead of** the empty `hdl/gl/CF_POR_SEQ_core.v` stub. See
+`verify/beh_model/README.md`.
 
 ## Features
 
 - Active-low POR output `por_l`
 - Active-low analog enable `en_l`
 - Compact always-on hard macro for bring-up and brown-out recovery
+- Characterized Liberty under `timing/lib/` (ff / tt / ss)
+- Ideal Verilog behavioral model under `verify/beh_model/` for functional sim
 - Customer cell `CF_POR_SEQ` 171.95 × 119.835 µm (15 µm halo around analog leaf 141.95 × 89.835 µm)
 - Chip PDN is `vpwr` / `vgnd`
 
@@ -100,9 +98,15 @@ integration. ChipFoundry substitutes protected full layout at tapeout.
 The chipIgnite delivery of this package is not marked shuttle-proven until
 a run returns.
 
+| Version | Date | Notes |
+|---|---|---|
+| 0.2.0 | 2026-09-06 | First unpublished wrap draft. Analog leaf `CF_POR_SEQ_core`; customer `CF_POR_SEQ` exposes chip PDN `vpwr`/`vgnd`. |
+| 0.2.1 | 2026-09-26 | Core fill-exclude covers so fillgen does not overwrite the analog. Ideal behavioral model for functional sim. |
+
 ## Limitations and Open Issues
 
 - Verilog in `hdl/gl/CF_POR_SEQ.v` is a structural wrap around an empty
-  `CF_POR_SEQ_core` blackbox, not a SPICE-accurate model.
+  `CF_POR_SEQ_core` blackbox. Functional sim uses
+  `verify/beh_model/CF_POR_SEQ_core.v` (ideal detector, not a characterized trip).
 - Companion sequencer, HV, and dense-nwell tops stay foundry-only. This
   package ships the wrap around the public analog POR leaf.

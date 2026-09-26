@@ -580,40 +580,32 @@ rlabel metal1 s 11522 20928 11578 23967 4 en_l
 port 1 nsew
 rlabel metal1 s 11633 20929 11688 23967 4 por_l
 port 2 nsew
-rlabel metal1 s 9267 20834 9750 20965 4 vgnd
-port 3 nsew
-rlabel metal2 s 9461 20834 9557 21687 4 vgnd
-port 4 nsew
 rlabel metal3 s 246 21067 34144 21687 4 vgnd
-port 5 nsew
+port 3 nsew
 rlabel metal4 s 4000 0 4620 23967 4 vgnd
-port 6 nsew
+port 4 nsew
 rlabel metal4 s 10000 0 10620 23967 4 vgnd
-port 7 nsew
+port 5 nsew
 rlabel metal4 s 16000 0 16620 23967 4 vgnd
-port 8 nsew
+port 6 nsew
 rlabel metal4 s 22000 0 22620 23967 4 vgnd
-port 9 nsew
+port 7 nsew
 rlabel metal4 s 28000 0 28620 23967 4 vgnd
-port 10 nsew
-rlabel metal1 s 12090 20350 12592 20462 4 vpwr
-port 11 nsew
-rlabel metal2 s 12293 20350 12389 22647 4 vpwr
-port 12 nsew
+port 8 nsew
 rlabel metal3 s 246 22027 34144 22647 4 vpwr
-port 13 nsew
+port 9 nsew
 rlabel metal4 s 1000 0 1620 23967 4 vpwr
-port 14 nsew
+port 10 nsew
 rlabel metal4 s 7000 0 7620 23967 4 vpwr
-port 15 nsew
+port 11 nsew
 rlabel metal4 s 13000 0 13620 23967 4 vpwr
-port 16 nsew
+port 12 nsew
 rlabel metal4 s 19000 0 19620 23967 4 vpwr
-port 17 nsew
+port 13 nsew
 rlabel metal4 s 25000 0 25620 23967 4 vpwr
-port 18 nsew
+port 14 nsew
 rlabel metal4 s 31000 0 31620 23967 4 vpwr
-port 19 nsew
+port 15 nsew
 << properties >>
 string FIXED_BBOX 0 0 34390 23967
 << end >>
